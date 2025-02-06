@@ -1,0 +1,12 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+.idea/git status
+
+# Ignore diagrams
+diagrams/*.drawio
+
+# Ignore resources
+resources/business needs.txt
+resources/curriculum.txt
+resources/distributed patterns.txt

@@ -47,6 +47,9 @@ services:
       ME_CONFIG_MONGODB_ADMINUSERNAME: sammy
       ME_CONFIG_MONGODB_ADMINPASSWORD: sammy123
       ME_CONFIG_MONGODB_SERVER: mongodb
+      # MongoExpress UI Login
+      ME_CONFIG_BASICAUTH_USERNAME: sammy
+      ME_CONFIG_BASICAUTH_PASSWORD: sammy123
     ports:
       - 8081:8081
     restart: always
@@ -55,7 +58,7 @@ services:
     container_name: ms_mail_dev
     image: maildev/maildev
     ports:
-      # UI
+      # Maildev UI
       - 1080:1080
       # SMTP
       - 1025:1025
