@@ -3,9 +3,9 @@ package com.sammy.ecommerceapp.customer.utils;
 import com.sammy.ecommerceapp.customer.dto.CustomerResponse;
 import com.sammy.ecommerceapp.customer.entity.Customer;
 import com.sammy.ecommerceapp.customer.dto.CustomerRequest;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-@Service
+@Component
 public class CustomerMapper {
 
     public Customer toCustomer(CustomerRequest request) {
