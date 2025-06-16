@@ -1,6 +1,7 @@
 package com.sammy.ecommerce.order.util;
 
 import com.sammy.ecommerce.order.dto.OrderLineRequest;
+import com.sammy.ecommerce.order.dto.OrderLineResponse;
 import com.sammy.ecommerce.order.entity.Order;
 import com.sammy.ecommerce.order.entity.OrderLine;
 import org.springframework.stereotype.Service;
@@ -19,4 +20,10 @@ public class OrderLineMapper {
                 .productId(request.productId())
                 .build();
     }
+
+    public OrderLineResponse toOrderLineResponse(OrderLine orderLine) {
+        return new OrderLineResponse(orderLine.getId(), orderLine.getQuantity());
+    }
+
+    // continue on 4:11:00
 }
