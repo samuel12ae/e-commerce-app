@@ -44,6 +44,4 @@ public class GlobalExceptionHandler {
                 .status(HttpStatus.BAD_REQUEST)
                 .body(new ErrorResponse(errors));
     }
-
-    // continue by 4:13:00
 }
