@@ -56,7 +56,7 @@ services:
 
   zookeeper:
     image: confluentinc/cp-zookeeper:latest
-    container_name: zookeeper
+    container_name: ms_zookeeper
     environment:
       ZOOKEEPER_SERVER_ID: 1
       ZOOKEEPER_CLIENT_PORT: 2181
@@ -93,12 +93,25 @@ services:
       - 1025:1025
 
   zipkin:
-    container_name: zipkin
+    container_name: ms_zipkin
     image: openzipkin/zipkin
     ports:
       - 9411:9411
     networks:
       - microservices-net
+
+  keycloak:
+    container_name: ms_keycloak
+    image: quay.io/keycloak/keycloak:24.0.2
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    ports:
+      - 9099:8080
+    networks:
+      - microservices-net
+    command:
+      - "start-dev"
 
 networks:
   microservices-net:
